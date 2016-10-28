@@ -5,9 +5,18 @@ describe('Actions', () => {
   it('should generate search text action', () => {
     var action = {
       type: 'SET_SEARCH_TEXT',
-      searchText: 'Somesearch text'
+      searchText: 'Some search text'
     };
     var res = actions.setSearchText(action.searchText);
+
+    expect(res).toEqual(action);
+  });
+
+  it('should generate toggle show completed action', () => {
+    var action = {
+      type: 'TOGGLE_SHOW_COMPLETED'
+    };
+    var res = actions.toggleShowCompleted();
 
     expect(res).toEqual(action);
   });
@@ -22,16 +31,7 @@ describe('Actions', () => {
     expect(res).toEqual(action);
   });
 
-  it('should generate toggle show completed', () => {
-    var action = {
-      type: 'TOGGLE_SHOW_COMPLETED'
-    };
-    var res = actions.toggleShowCompleted();
-
-    expect(res).toEqual(action);
-  });
-
-  it('should generate toggle todo', () => {
+  it('should generate toggle todo action', () => {
     var action = {
       type: 'TOGGLE_TODO',
       id: '123'
@@ -40,5 +40,4 @@ describe('Actions', () => {
 
     expect(res).toEqual(action);
   });
-
 });

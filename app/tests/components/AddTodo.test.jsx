@@ -2,10 +2,9 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var TestUtils = require('react-addons-test-utils');
 var expect = require('expect');
-var $ = require('jQuery');
+var $ = require('jquery');
 
 var AddTodo = require('AddTodo');
-var TodoApp = require('TodoApp');
 
 describe('AddTodo', () => {
   it('should exist', () => {
@@ -22,10 +21,9 @@ describe('AddTodo', () => {
     TestUtils.Simulate.submit($el.find('form')[0]);
 
     expect(spy).toHaveBeenCalledWith(todoText);
-
   });
 
-  it('should not call onAddTodo prop with invalid data', () => {
+  it('should not call onAddTodo prop when invalid input', () => {
     var todoText = '';
     var spy = expect.createSpy();
     var addTodo = TestUtils.renderIntoDocument(<AddTodo onAddTodo={spy}/>);
@@ -35,6 +33,5 @@ describe('AddTodo', () => {
     TestUtils.Simulate.submit($el.find('form')[0]);
 
     expect(spy).toNotHaveBeenCalled();
-
   });
 });

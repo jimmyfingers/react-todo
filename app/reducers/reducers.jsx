@@ -7,7 +7,7 @@ export var searchTextReducer = (state = '', action) => {
       return action.searchText;
     default:
       return state;
-  }
+  };
 };
 
 export var showCompletedReducer = (state = false, action) => {
@@ -32,19 +32,18 @@ export var todosReducer = (state = [], action) => {
           completedAt: undefined
         }
       ];
-      // add case for toggle todo. copmleted to opposite calue and update copmleted at
-      case 'TOGGLE_TODO':
-        return state.map((todo) => {
-          if(todo.id === action.id){
-            var nextCompleted = !todo.completed;
+    case 'TOGGLE_TODO':
+      return state.map((todo) => {
+        if (todo.id === action.id) {
+          var nextCompleted = !todo.completed;
 
-            return {
-              ...todo,
-              completed: nextCompleted,
-              completedAt: nextCompleted ? moment().unix() : undefined
-            };
-          }
-        });
+          return {
+            ...todo,
+            completed: nextCompleted,
+            completedAt: nextCompleted ? moment().unix() : undefined
+          };
+        }
+      });
     default:
       return state;
   }

@@ -1,5 +1,5 @@
 .container {
-  background-color: $light-grey;
+  background: $light-grey;
   border: 1px solid $light-grey-border;
   border-radius: 5px;
   padding: 0;
@@ -16,18 +16,18 @@
   }
 
   > :last-child {
-    display: flex;
     align-items: center;
+    display: flex;
   }
-}
-
-.container__footer {
-  padding: 1rem 1rem 0 1rem;
-  border-top: 1px solid $light-grey-border;
 }
 
 .container__message {
   color: $light-color;
   margin: 2rem auto;
   text-align: center;
+}
+
+.container__footer {
+  border-top: 1px solid $light-grey-border;
+  padding: 1rem 1rem 0 1rem;
 }
