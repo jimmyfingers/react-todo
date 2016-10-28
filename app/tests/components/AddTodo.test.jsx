@@ -11,12 +11,12 @@ describe('AddTodo', () => {
     expect(AddTodo).toExist();
   });
 
-  it('should dispatch todo when valida todo text', () => {
+  it('should dispatch ADD_TODO when valid todo text', () => {
     var todoText = 'Check mail';
     var action = {
       type: 'ADD_TODO',
       text: todoText
-    };
+    }
     var spy = expect.createSpy();
     var addTodo = TestUtils.renderIntoDocument(<AddTodo dispatch={spy}/>);
     var $el = $(ReactDOM.findDOMNode(addTodo));
@@ -27,7 +27,7 @@ describe('AddTodo', () => {
     expect(spy).toHaveBeenCalledWith(action);
   });
 
-  it('should not dispatch todo when invalid invalid todo text', () => {
+  it('should not dispatch ADD_TODO when invalid todo text', () => {
     var todoText = '';
     var spy = expect.createSpy();
     var addTodo = TestUtils.renderIntoDocument(<AddTodo dispatch={spy}/>);
