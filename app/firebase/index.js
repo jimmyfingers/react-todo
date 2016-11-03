@@ -2,16 +2,15 @@ import firebase from 'firebase';
 
 try {
   var config = {
-   apiKey: "AIzaSyDofm3-2bpuM5KgwJorXkOqjSDrRaUC0PY",
-   authDomain: "todo-app-f771d.firebaseapp.com",
-   databaseURL: "https://todo-app-f771d.firebaseio.com",
-   storageBucket: "todo-app-f771d.appspot.com",
-   messagingSenderId: "811357947632"
- };
+    apiKey: process.env.API_KEY,
+    authDomain: process.env.AUTH_DOMAIN,
+    databaseURL: process.env.DATABASE_URL,
+    storageBucket: process.env.STORAGE_BUCKET,
+  };
 
   firebase.initializeApp(config);
 } catch (e) {
-
+  
 }
 
 export var firebaseRef = firebase.database().ref();
